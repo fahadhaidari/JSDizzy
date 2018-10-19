@@ -1,8 +1,6 @@
 window.onload = function() {
   const canvas = document.getElementById('canvas');
   const context = canvas.getContext('2d');
-  canvas.width = 600;
-  canvas.height = 600;
   const quads = [];
   const size = 2;
   const speed = 2;
@@ -38,7 +36,7 @@ window.onload = function() {
 
   const update = function() {
     { quads.length && animate() }
-    
+
     if (Key.isDown(Key.RIGHT)) {
       player.velVec.x += speed;
     }
@@ -61,6 +59,9 @@ window.onload = function() {
   };
 
   const init = function() {
+    canvas.width = 600;
+    canvas.height = 600;
+    
     for (var i = 0; i < 50; i++) {
       grid[i] = [];
       for (var j = 0; j < 50; j++) {
